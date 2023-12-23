@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	// google uuid
 )
 
 func SetUpRouter() *gin.Engine {
@@ -44,6 +45,13 @@ func TestCreateTrackPostReturnsStatusOk(t *testing.T) {
 }
 
 /*
+type TrackReq struct {
+	id uuid
+	page string
+}
+*/
+
+/*
 Псевдо-высоконагруженное unit тестирование сходное тесту выше
 */
 func TestHighLoadCreateTrackPostReturnsStatusOk(t *testing.T) {
@@ -57,6 +65,14 @@ func TestHighLoadCreateTrackPostReturnsStatusOk(t *testing.T) {
 
 	// Чтобы избежать кеширования, лучше заменить готовую строку на генерированную
 	var jsonValue = []byte(`{"id":"60b496c1", "page":"demo"}`)
+
+        /*
+	trackReq := TrackReq{
+            id: uuid.String(),
+	    page: "testPage",
+        }
+	var jsonValue = json.Marshal(trackReq)
+	*/
 
 	// Почему 70?
 	// Из расчёта 250000 rph == ~70 rps
