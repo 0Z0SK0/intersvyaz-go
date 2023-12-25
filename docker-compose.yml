@@ -5,9 +5,9 @@ services:
     image: postgres:14.8-alpine3.18
     restart: always
     environment:
-      POSTGRES_DB: test
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: testik
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
@@ -17,9 +17,9 @@ services:
     build: .
     restart: always
     environment:
-      DATABASE_URL: "postgresql://test:testik@db:5432/test?sslmode=disable"
+      DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?sslmode=disable"
     ports:
-      - "8000:8000"
+      - "${APP_PORT}:${APP_PORT}"
     depends_on:
       - db
     command: ["./app"]
