@@ -19,8 +19,8 @@ jobs:
 
     - name: Set up Docker Compose
       run: |
-        sudo apt install --upgrade docker-compose
-        sudo apt install --upgrade docker
+        apt install --upgrade docker-compose
+        apt install --upgrade docker
 
     - name: Set up Go
       uses: actions/setup-go@v4
