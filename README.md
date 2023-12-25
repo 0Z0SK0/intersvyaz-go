@@ -15,7 +15,7 @@ docker-compose up
 ```
 
 > [!NOTE]
-> Порт по умолчанию - 8000, изменяется в config/config.yaml
+> Порт по умолчанию - 8000, изменяется в config/config.yaml (и docker-compose.yml)
 
 ## Structure
 ```
