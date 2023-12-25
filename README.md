@@ -2,7 +2,7 @@
 RESTful API приложение для сбора метрики
 
 > [!NOTE]
-> Перед запуском убедитесь что выставлена переменная окружения DATABASE_URL, с данными подключения к PostgreSQL (их можно сменить в файле docker-compose.yml).
+> Перед запуском убедитесь что выставлены данные подключения к PostgreSQL (их можно сменить в файле .env).
 
 ```bash
 # Build and Run
@@ -13,9 +13,6 @@ docker-compose up
 
 # Default API Endpoint : http://127.0.0.1:8000
 ```
-
-> [!NOTE]
-> Порт по умолчанию - 8000, изменяется в config/config.yaml (и docker-compose.yml)
 
 ## Structure
 ```
