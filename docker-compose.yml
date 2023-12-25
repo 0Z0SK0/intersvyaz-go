@@ -1,32 +1,25 @@
 version: '2'
 
 services:
-  server:
-    image: intersvyaz-go-test
-    container_name: "intersvyaz-go-test"
-    build: ./
-    environment:
-      DATABASE_URL: "postgres://test:testik@localhost:5432/test"
-    command: ./app
-    ports:
-      - 8000:8000
-    depends_on:
-      - migration
-      - postgres
-
-  postgres:
+  db:
     image: postgres:14.8-alpine3.18
+    restart: always
     environment:
-      POSTGRES_DB: "test"
-      POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "testik"
+      POSTGRES_DB: test
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: testik
     ports:
       - "5432:5432"
-
-  migration:
-    image: migrate/migrate
     volumes:
-      - .:/migrations
-    command:  ["-path", "/migrations", "-database", "postgresql://test:testik@localhost:5432/test?sslmode=disable", "up", "3"]
-    links:
-      - postgres
+      - ./migrations:/docker-entrypoint-initdb.d
+
+  app:
+    build: .
+    restart: always
+    environment:
+      DATABASE_URL: "postgresql://test:testik@db:5432/test?sslmode=disable"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: ["./app"]
