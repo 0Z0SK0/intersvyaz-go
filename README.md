@@ -19,9 +19,6 @@ docker-compose up
 ├── cmd
 │   └── app
 │       └── main.go          // Основное приложение
-├── config
-│   ├── config.go            // Обработчик для конфиг-файла
-│   └── config.yaml          // Конфиг-файл
 ├── models
 │   └── track.go             // Модель таблицы track
 ├── server

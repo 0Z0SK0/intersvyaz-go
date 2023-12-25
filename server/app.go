@@ -38,7 +38,7 @@ func CreateApp() *App {
 	}
 }
 
-func (app *App) Start(port string) error {
+func (app *App) Start() error {
 	// to prod
 	gin.SetMode(gin.ReleaseMode)
 
@@ -59,7 +59,7 @@ func (app *App) Start(port string) error {
 	trackhttp.RegisterEndpoints(router, app.trackUseCase)
 
 	app.http = &http.Server{
-		Addr:           ":" + port,
+		Addr:           ":" + os.Getenv("APP_PORT"),
 		Handler:        router,
 		ReadTimeout:    15 * time.Second,
 		WriteTimeout:   15 * time.Second,
