@@ -12,10 +12,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/0z0sk0/intersvyaz-go-test/track"
-	trackhttp "github.com/0z0sk0/intersvyaz-go-test/track/http/delivery"
-	trackrepo "github.com/0z0sk0/intersvyaz-go-test/track/repository"
-	trackusecase "github.com/0z0sk0/intersvyaz-go-test/track/usecase"
+	"github.com/0z0sk0/simple-metrika-app/track"
+	trackhttp "github.com/0z0sk0/simple-metrika-app/track/http/delivery"
+	trackrepo "github.com/0z0sk0/simple-metrika-app/track/repository"
+	trackusecase "github.com/0z0sk0/simple-metrika-app/track/usecase"
 )
 
 type App struct {

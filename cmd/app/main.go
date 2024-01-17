@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/0z0sk0/intersvyaz-go-test/server"
+	"github.com/0z0sk0/simple-metrika-app/server"
 	"log"
 )
 

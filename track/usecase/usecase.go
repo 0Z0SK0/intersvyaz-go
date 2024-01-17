@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/0z0sk0/intersvyaz-go-test/models"
-	"github.com/0z0sk0/intersvyaz-go-test/track/repository"
+	"github.com/0z0sk0/simple-metrika-app/models"
+	"github.com/0z0sk0/simple-metrika-app/track/repository"
 )
 
 type TrackUseCase struct {

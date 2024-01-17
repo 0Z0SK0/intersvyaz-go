@@ -2,7 +2,7 @@ package track
 
 import (
 	"context"
-	"github.com/0z0sk0/intersvyaz-go-test/models"
+	"github.com/0z0sk0/simple-metrika-app/models"
 )
 
 type Repository interface {

@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/0z0sk0/intersvyaz-go-test/track"
+	"github.com/0z0sk0/simple-metrika-app/track"
 	"github.com/gin-gonic/gin"
 )
 
