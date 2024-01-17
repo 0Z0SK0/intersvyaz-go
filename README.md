@@ -1,4 +1,4 @@
-# Intersvyaz Golang Test Task
+# Simple Metrika REST app
 RESTful API приложение для сбора метрики
 
 > [!NOTE]
@@ -6,7 +6,7 @@ RESTful API приложение для сбора метрики
 
 ```bash
 # Build and Run
-cd intersvyaz-go-test
+cd simple-metrika-app
 make
 docker-compose build
 docker-compose up
